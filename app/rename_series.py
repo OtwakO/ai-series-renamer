@@ -1,6 +1,7 @@
 import os
 import re
 import time
+from datetime import datetime
 from pathlib import Path
 
 import google.generativeai as genai
@@ -53,6 +54,7 @@ def is_renamed(episode_name: str):
 def start_rename(watch_directory: list[Path]):
     all_folders = []
     print("-" * 50)
+    print(f"Run started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("Watching directory: ")
     for path in watch_directory:
         if path.is_dir():
