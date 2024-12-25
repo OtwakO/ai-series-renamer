@@ -90,7 +90,7 @@ def start_rename(watch_directory: list[Path]):
             if index == len(all_folders) - 1:  # Check if last iteration
                 break
             else:
-                time.sleep(60)
+                time.sleep(5)
 
 
 if __name__ == "__main__":
