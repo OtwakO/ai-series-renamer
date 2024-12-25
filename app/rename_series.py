@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 WATCH_DIRECTORY = [Path("watchlist")]
 WATCH_EXTENSION = (".mkv", ".mp4", ".nfo", ".avi")
+EXCLUDE_NAME = ("tvshow.nfo", "season.nfo")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 
@@ -67,7 +68,9 @@ def start_rename(watch_directory: list[Path]):
         episodes = [
             episode
             for episode in series.rglob("*")
-            if episode.suffix in WATCH_EXTENSION and not is_renamed(episode.name)
+            if episode.suffix in WATCH_EXTENSION
+            and not is_renamed(episode.name)
+            and episode.name not in EXCLUDE_NAME
         ]
         if episodes:
             episode_names = [episode.stem for episode in episodes]
