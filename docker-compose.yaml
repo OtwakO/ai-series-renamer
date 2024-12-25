@@ -1,0 +1,12 @@
+services:
+  ai-series-renamer:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    container_name: ai-series-renamer
+    restart: no
+    volumes:
+      - ./bangumi:/app/watchlist/bangumi
+    network_mode: bridge
