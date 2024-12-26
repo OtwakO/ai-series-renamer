@@ -99,4 +99,6 @@ def start_rename(watch_directory: list[Path]):
 
 
 if __name__ == "__main__":
-    start_rename(WATCH_DIRECTORY)
+    # start_rename(WATCH_DIRECTORY)
+    test = ["[Sakurato] Sousou no Frieren [26][AVC-8bit 1080p AAC][CHT]"]
+    print(rename_series(test))
