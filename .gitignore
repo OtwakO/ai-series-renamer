@@ -4,3 +4,4 @@ test_files
 .venv
 app/.venv
 app/.env
+app/old
