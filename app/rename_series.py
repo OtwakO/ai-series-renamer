@@ -85,6 +85,7 @@ def start_rename(watch_directory: list[Path]):
             for episode_info in ai_results:
                 relative_path = Path(episode_info["file_path"]).relative_to(Path("watchlist"))
                 if match := next((real_path for real_path in episodes if str(relative_path) in str(real_path)), None):
+                    print(match)
                     rename_episode(match, episode_info["show_name"], episode_info["season_number"], episode_info["episode_number"], episode_info["is_special_season"])
             if index == len(all_folders) - 1:  # Check if last iteration
                 break
