@@ -83,7 +83,7 @@ def start_rename(watch_directory: list[Path]):
         if episodes:
             ai_results = rename_series(episodes)
             for episode_info in ai_results:
-                relative_path = Path(episode_info["file_path"]).relative_to(Path("watchlist"))
+                relative_path = Path(episode_info["file_path"]).relative_to(Path("/watchlist"))
                 if match := next((real_path for real_path in episodes if str(relative_path) in str(real_path)), None):
                     print(match)
                     rename_episode(match, episode_info["show_name"], episode_info["season_number"], episode_info["episode_number"], episode_info["is_special_season"])
@@ -94,6 +94,7 @@ def start_rename(watch_directory: list[Path]):
 
 
 if __name__ == "__main__":
-    start_rename(WATCH_DIRECTORY)
+    # start_rename(WATCH_DIRECTORY)
+    print(Path("/watchlist/bangumi/test/Season 4/[Sakurato] Sousou no Frieren [21][AVC-8bit 1080p AAC][CHT].nfo").relative_to(Path("/watchlist")))
     # test = ["/bangumi/[Sakurato] Sousou no Frieren Season 2 [22][AVC-8bit 1080p AAC][CHT].mp4", "/Season 3/[Nekomoe kissaten&LoliHouse] Kono Sekai wa Fukanzen Sugiru - 04 [WebRip 1080p HEVC-10bit AAC ASSx2].mkv"]
     # print(rename_series(test))
