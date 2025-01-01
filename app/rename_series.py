@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 WATCH_DIRECTORY = [Path("watchlist")]
 WATCH_EXTENSION = os.getenv("WATCH_EXTENSION", ".mp4;.mkv;.avi;.nfo;.srt").split(";")
-EXCLUDE_FILE = os.getenv("EXCLUDE_FILE").split(";")
+EXCLUDE_FILE = os.getenv("EXCLUDE_FILE", "tvshow.nfo;season.nfo").split(";")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 

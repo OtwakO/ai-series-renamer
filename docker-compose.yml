@@ -5,6 +5,10 @@ services:
       dockerfile: Dockerfile
     env_file:
       - .env
+    environment:
+      - TZ=Asia/Taipei
+      - WATCH_EXTENSION=.mp4;.mkv;.avi;.nfo;.srt
+      - EXCLUDE_FILE=tvshow.nfo;season.nfo
     container_name: ai-series-renamer
     restart: no
     volumes:
