@@ -27,4 +27,11 @@ volumes:
   - /downloads/tvshows:/app/watchlist/tvshows
 ```
 
+Other configurations can be set in the docker-compose.yml environment as well:
+
+```
+  - WATCH_EXTENSION=.mp4;.mkv;.avi;.nfo;.srt
+  - EXCLUDE_FILE=tvshow.nfo;season.nfo
+```
+
 Check gemini's api for free tier limitation (usually 1500 requests per day), one watched directory is one request
