@@ -12,6 +12,5 @@ services:
     container_name: ai-series-renamer
     restart: no
     volumes:
-      # - ./bangumi:/app/watchlist/bangumi
-      - ./test_files:/app/watchlist/test_files
+      # - /path/to/watch/folder:/app/watchlist/folder_name
     network_mode: bridge
