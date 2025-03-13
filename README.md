@@ -1,4 +1,4 @@
-use .env file in root directory to set environment variables or set in docker-compose.yml file:
+Create .env file in root directory to set environment variables or set in docker-compose.yml file:
 
 ```
 GEMINI_API_KEY=your_gemini_api_key
@@ -8,11 +8,12 @@ In docker-compose.yml file, set the volume to the directory you want to watch:
 
 ```
 volumes:
-  - /path/to/watch:/watch
+  - /path/to/watch/folder:/app/watchlist/folder_name
 
-e.g
+Example:
+
 volumes:
-  - /downloads/tvshows:/watch/tvshows
+  - /downloads/tvshows:/app/watchlist/tvshows
 ```
 
 ```

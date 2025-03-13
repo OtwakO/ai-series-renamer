@@ -1,7 +1,5 @@
-.env
-test_files
+**/.env
+**/.venv
+**/test*
 **/__pycache__
-.venv
-app/.venv
-app/.env
 app/old

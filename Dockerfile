@@ -10,7 +10,8 @@ COPY ./app /app
 
 # Install the requirements
 # RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
-RUN uv pip install --system --no-cache-dir -r requirements.txt
+# RUN uv pip install --system --no-cache-dir -r requirements.txt
+RUN uv sync
 
 # Run the app with the Litestar CLI
-CMD ["python", "rename_series.py"]
+CMD ["uv", "run", "rename_series.py"]
